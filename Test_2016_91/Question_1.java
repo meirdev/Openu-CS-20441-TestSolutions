@@ -18,6 +18,8 @@ public class Question_1 {
 			return count;
 		}
 		
+		int temp = maze[y][x];
+		
 		maze[y][x] = -1;
 		
 		if (y+1 < maze.length) {
@@ -35,6 +37,8 @@ public class Question_1 {
 		if (x-1 >= 0) {
 			d = minDragon(maze, y, x-1, count);
 		}
+		
+		maze[y][x] = temp;
 		
 		return Math.min(a, Math.min(b, Math.min(c, d)));
 	}
